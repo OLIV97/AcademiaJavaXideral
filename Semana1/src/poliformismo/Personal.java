@@ -16,22 +16,7 @@ public abstract class Personal implements PersonalInterface  {
 		this.puesto = puesto;
 		this.transporte = transporte;
 	}
-
-	void setEntrada(Date entrada) {
-		 this.horaEntrada = entrada;
-	 }
 	
-	 void setSalida(Date salida) {
-		 this.horaSalida = salida;
-	 }
-	
-	 Date getEntrada() {
-		 return horaEntrada;
-	 }
-		
-	 Date getSalida() {
-		return horaSalida;
-	 }
 	 public String getPuesto() {
 		return puesto;
 	}

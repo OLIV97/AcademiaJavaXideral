@@ -1,5 +1,7 @@
 package poliformismo;
 
+import java.util.Date;
+
 public class Seguridad extends Personal {
 
 	public Seguridad(String nombre, String puesto, String transporte) {
@@ -16,4 +18,22 @@ public class Seguridad extends Personal {
 		return  nombre+" llego hoy en " + transporte;
 	}
 
+	@Override
+	public void setEntrada(Date entrada) {
+		 this.horaEntrada = entrada;
+	 }
+	
+	@Override
+	 public void setSalida(Date salida) {
+		 this.horaSalida = salida;
+	 }
+	
+	@Override
+	public Date getEntrada() {
+		 return horaEntrada;
+	 }
+	@Override
+	public  Date getSalida() {
+		return horaSalida;
+	 }
 }

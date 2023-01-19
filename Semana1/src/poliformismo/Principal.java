@@ -8,7 +8,7 @@ public class Principal extends Thread {
 
 	public static void main(String[] args) {
 		
-		List<Personal> personal = new ArrayList();
+		List<PersonalInterface> personal = new ArrayList();
 		
 		personal.add(new Administrativo("Enrique segoviano", "Director", "Auto"));
 		personal.add(new Docente("sotanita del socorro", "Taller de base de datos", "Autobus"));
@@ -17,7 +17,7 @@ public class Principal extends Thread {
 
 		
 			
-        for(Personal p1 :personal) {
+        for(PersonalInterface p1 :personal) {
         	try {
         		
 	        	sleep(2000);
