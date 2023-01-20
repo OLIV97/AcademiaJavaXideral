@@ -15,7 +15,7 @@ public class RelojChecadora extends Thread  {
      
     }
 
-
+    //Metodo para obtener la hora de entrada
     public String getCheck() {
         try {
             sleep(3000);
@@ -25,6 +25,7 @@ public class RelojChecadora extends Thread  {
     	return dtf.format(LocalDateTime.now());
     }
 
+  //Metodo para instanciar el objeto
     public static RelojChecadora getInstancia() {
     	
         if (relojchecadora == null) {
