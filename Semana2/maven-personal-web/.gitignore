@@ -14,10 +14,7 @@ local.properties
 */.classpath
 */.project
 Servers/
-pruebas_personales
-Singleton
-Semana2/maven-personal-web/.settings
-Semana2/maven-personal-web/target
+
 # External tool builders
 .externalToolBuilders/
 
@@ -68,3 +65,4 @@ Semana2/maven-personal-web/target
 #.project
 
 */WEB-INF/lib
+/target/
