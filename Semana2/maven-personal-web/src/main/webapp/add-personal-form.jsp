@@ -5,7 +5,7 @@
 	<title>lista de asistencia</title>
 
 	<link type="text/css" rel="stylesheet" href="css/style.css">
-	<link type="text/css" rel="stylesheet" href="css/add-student-style.css">	
+	<link type="text/css" rel="stylesheet" href="css/add-personal-style.css">	
 </head>
 
 <body>
