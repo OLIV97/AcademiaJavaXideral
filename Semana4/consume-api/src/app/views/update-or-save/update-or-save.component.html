@@ -1,0 +1,20 @@
+<div style="background: grey; min-height: 100vh;" class=" w-100 h-100 d-flex flex-column justify-content-center align-items-center" >
+    <div class="text-light" style="width: 350px;">
+        <h1>{{type_mode | titlecase }} Personal</h1>
+    </div>
+    <div class="text-light d-flex justify-content-start" style="width: 350px;">
+        <form class="w-100">
+            <div class="mb-3">
+              <label for="nombres" class="col-form-label" >Nombres:</label>
+              <input type="text" class="form-control" id="nombre" name="nombres" [(ngModel)]="nombres">
+            </div>
+            <div class="mb-3">
+              <label for="apellidos" class="col-form-label">Apellidos:</label>
+              <input type="text" class="form-control" id="apellidos" name="apellidos" [(ngModel)]="apellidos">
+            </div>
+          </form>
+    </div>
+    <div class="text-light d-flex justify-content-start mt-3" style="width: 350px;">
+        <button type="button" class="btn btn-primary" (click)="saveOrUpdatePersonal()">{{type_mode | titlecase }}</button>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+<div style="background: grey; min-height: 100vh;" class=" w-100 h-100 d-flex flex-column justify-content-center align-items-center" >
+    <div class="w-75 text-light">
+        <h1>Lista de asistencia</h1>
+    </div>
+    <div class="w-75 text-light">
+        <button type="button" class="btn btn-warning" [routerLink]="['/personal/guardar']"  >add personal</button>
+    </div>
+    <div class="w-75">
+        <table *ngIf="all_personal" class="table">
+            <thead>
+                <tr>
+                    <th class="text-center" style="color:#ffffff !important;">Nombres</th>
+                    <th class="text-center" style="color:#ffffff !important;">Apellidos</th>
+                    <th class="text-center" style="color:#ffffff !important;">Hora entrada</th>
+                    <th class="text-center" style="color:#ffffff !important;">Hora salida</th>
+                    <th class="text-center" style="color:#ffffff !important;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let personal of all_personal;">
+                    <td class="text-center" style="color:#ffffff !important;">{{personal.nombres}}</td>
+                    <td class="text-center" style="color:#ffffff !important;">{{personal.apellidos}}</td>
+                    <td class="text-center" style="color:#ffffff !important;">{{personal.horaentrada}}</td>
+                    <td class="text-center" style="color:#ffffff !important;">{{personal.horasalida}}</td>
+
+                    <td style="color:#ffffff !important; gap:12px;" class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="set_id(personal.id)" >Eliminar</button>
+                        <button type="button" class="btn btn-success"  [routerLink]="['/personal/actualizar/'+personal.id]" >Actualizar</button>
+                        <button type="button" class="btn btn-light" (click)="checkPersonal(personal.id,'entrada')">Entrada</button>
+                        <button type="button" class="btn btn-dark" (click)="checkPersonal(personal.id,'salida')">Salida</button>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table *ngIf="!all_personal" class="table placeholder-glow">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Hora entrada</th>
+                    <th scope="col">Hora salida</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of loading_personal;">
+                    <td>
+                        <span class="placeholder col-4 bg-light"></span>
+                    </td>
+                    <td>
+                        <span class="placeholder col-4 bg-light"></span>
+                    </td>
+                    <td>
+                        <span class="placeholder col-4 bg-light"></span>
+                    </td>
+                    <td>
+                        <span class="placeholder col-4 bg-light"></span>
+                    </td>
+
+                    <td> <span class="placeholder col-4 bg-light"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal"  data-bs-backdrop="static" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="deleteModalLabel">Eliminar personal</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Estas seguro de eliminar al personal?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete_personal()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
